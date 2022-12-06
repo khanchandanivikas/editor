@@ -8,11 +8,11 @@ const modules = {
     ["bold", "italic", "underline", "strike", "blockquote"],
     [
       { list: "ordered" },
-      { list: "bullet" }
-    //   { indent: "-1" },
-    //   { indent: "+1" },
+      { list: "bullet" },
+      //   { indent: "-1" },
+      //   { indent: "+1" },
     ],
-    ["link", "image", "video"]
+    ["link", "image", "video"],
     // ["clean"],
   ],
   clipboard: {
@@ -22,8 +22,8 @@ const modules = {
 };
 const formats = [
   "header",
-//   "font",
-//   "size",
+  //   "font",
+  //   "size",
   "bold",
   "italic",
   "underline",
@@ -31,22 +31,25 @@ const formats = [
   "blockquote",
   "list",
   "bullet",
-//   "indent",
+  //   "indent",
   "link",
   "image",
-  "video"
+  "video",
 ];
 const Editor = () => {
   const [value, setValue] = useState("");
   console.log(value);
   return (
-    <ReactQuill
-      value={value}
-      onChange={setValue}
-      theme="snow"
-      modules={modules}
-      formats={formats}
-    />
+    <div>
+      <ReactQuill
+        value={value}
+        onChange={setValue}
+        theme="snow"
+        modules={modules}
+        formats={formats}
+      />
+      <div>{value}</div>
+    </div>
   );
 };
 
